@@ -1,35 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-lang="zh">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隐私政策 - 无聊克星</title>
 <meta name="description" content="无聊克星 ChrisMuse 隐私政策">
 <style>
-  :root {
-    --bg: #f7f7f9;
-    --card: #ffffff;
-    --text: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --border: #e5e5ea;
-    --accent: #6c5ce7;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #000000;
-      --card: #1c1c1e;
-      --text: #f5f5f7;
-      --text-secondary: #98989d;
-      --border: #38383a;
-      --accent: #a29bfe;
-    }
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: #f7f7f9;
+    color: #1d1d1f;
     line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -38,10 +20,8 @@
   header {
     position: sticky;
     top: 0;
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(247, 247, 249, 0.92);
+    border-bottom: 1px solid #e5e5ea;
     z-index: 100;
   }
   .header-inner {
@@ -55,30 +35,28 @@
   .logo {
     font-size: 15px;
     font-weight: 600;
-    letter-spacing: -0.2px;
+    color: #1d1d1f;
   }
   .lang-toggle {
     display: inline-flex;
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
     border-radius: 999px;
     padding: 3px;
   }
   .lang-toggle button {
     border: none;
     background: transparent;
-    color: var(--text-secondary);
+    color: #6e6e73;
     padding: 6px 14px;
     border-radius: 999px;
     cursor: pointer;
     font-size: 13px;
     font-weight: 500;
-    transition: all 0.2s ease;
     font-family: inherit;
   }
-  .lang-toggle button:hover { color: var(--text); }
   .lang-toggle button.active {
-    background: var(--accent);
+    background: #6c5ce7;
     color: #ffffff;
   }
   .container {
@@ -89,54 +67,49 @@
   h1 {
     font-size: 36px;
     font-weight: 700;
-    letter-spacing: -1px;
+    color: #1d1d1f;
     margin-bottom: 8px;
   }
   .meta {
-    color: var(--text-secondary);
+    color: #6e6e73;
     font-size: 14px;
     margin-bottom: 36px;
   }
-  h2 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-top: 36px;
-    margin-bottom: 12px;
-    letter-spacing: -0.2px;
-  }
-  p { margin-bottom: 14px; }
   .card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
     border-radius: 16px;
     padding: 22px 24px;
     margin-bottom: 14px;
   }
+  h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+  }
+  p { margin-bottom: 14px; color: #1d1d1f; }
   .card p:last-child { margin-bottom: 0; }
-  ul { padding-left: 22px; margin-bottom: 14px; }
+  ul { padding-left: 22px; margin-bottom: 14px; color: #1d1d1f; }
   li { margin-bottom: 6px; }
   strong { font-weight: 600; }
-  a.contact { color: var(--accent); text-decoration: none; }
-  a.contact:hover { text-decoration: underline; }
+  a.contact { color: #6c5ce7; text-decoration: none; }
   footer {
     margin-top: 56px;
     padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--text-secondary);
+    border-top: 1px solid #e5e5ea;
+    color: #6e6e73;
     font-size: 13px;
     text-align: center;
   }
-  [data-lang] { display: none; }
-  [data-lang].active { display: block; }
+  /* 默认隐藏英文 */
+  .lang-en { display: none; }
+  /* 显示中文（默认） */
+  .lang-zh { display: block; }
   @media (max-width: 540px) {
     h1 { font-size: 30px; }
-    .card { padding: 18px 18px; }
+    .card { padding: 18px; }
     .lang-toggle button { padding: 6px 10px; font-size: 12px; }
-  }
-  @media print {
-    header { display: none; }
-    body { background: white; color: black; }
-    .card { border: 1px solid #ccc; box-shadow: none; }
   }
 </style>
 </head>
@@ -144,10 +117,10 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo" data-i18n="logo">无聊克星</div>
-    <div class="lang-toggle" role="tablist">
-      <button class="lang-btn active" data-lang-set="zh" type="button">中文</button>
-      <button class="lang-btn" data-lang-set="en" type="button">English</button>
+    <div class="logo">无聊克星</div>
+    <div class="lang-toggle">
+      <button id="btn-zh" class="active" type="button">中文</button>
+      <button id="btn-en" type="button">English</button>
     </div>
   </div>
 </header>
@@ -155,7 +128,7 @@
 <div class="container">
 
   <!-- 中文 -->
-  <div data-lang="zh" class="active">
+  <div class="lang-zh">
     <h1>隐私政策</h1>
     <p class="meta">最后更新：2026 年 6 月 16 日</p>
 
@@ -208,7 +181,7 @@
   </div>
 
   <!-- English -->
-  <div data-lang="en">
+  <div class="lang-en">
     <h1>Privacy Policy</h1>
     <p class="meta">Last updated: June 16, 2026</p>
 
@@ -264,36 +237,40 @@
 
 <script>
   (function () {
-    var langBtns = document.querySelectorAll('.lang-btn');
-    var langContents = document.querySelectorAll('[data-lang]');
-    var html = document.documentElement;
-    var titles = {
-      zh: { title: '隐私政策 - 无聊克星', logo: '无聊克星' },
-      en: { title: 'Privacy Policy - ChrisMuse', logo: 'ChrisMuse' }
-    };
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    var zh = document.querySelector('.lang-zh');
+    var en = document.querySelector('.lang-en');
 
-    function setLang(lang) {
-      if (lang !== 'zh' && lang !== 'en') return;
-      langContents.forEach(function (el) {
-        el.classList.toggle('active', el.dataset.lang === lang);
-      });
-      langBtns.forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.langSet === lang);
-      });
-      html.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      var logoEl = document.querySelector('.logo');
-      if (logoEl && titles[lang].logo) logoEl.textContent = titles[lang].logo;
-      document.title = titles[lang].title;
-      try { localStorage.setItem('chrismuse_privacy_lang', lang); } catch (e) {}
+    function show(lang) {
+      if (lang === 'en') {
+        zh.style.display = 'none';
+        en.style.display = 'block';
+        btnZh.classList.remove('active');
+        btnEn.classList.add('active');
+        document.title = 'Privacy Policy - ChrisMuse';
+        document.querySelector('.logo').textContent = 'ChrisMuse';
+        document.documentElement.lang = 'en';
+        try { localStorage.setItem('chrismuse_privacy_lang', 'en'); } catch (e) {}
+      } else {
+        en.style.display = 'none';
+        zh.style.display = 'block';
+        btnEn.classList.remove('active');
+        btnZh.classList.add('active');
+        document.title = '隐私政策 - 无聊克星';
+        document.querySelector('.logo').textContent = '无聊克星';
+        document.documentElement.lang = 'zh-CN';
+        try { localStorage.setItem('chrismuse_privacy_lang', 'zh'); } catch (e) {}
+      }
     }
 
-    langBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () { setLang(btn.dataset.langSet); });
-    });
+    btnZh.addEventListener('click', function () { show('zh'); });
+    btnEn.addEventListener('click', function () { show('en'); });
 
-    var saved = null;
-    try { saved = localStorage.getItem('chrismuse_privacy_lang'); } catch (e) {}
-    if (saved === 'zh' || saved === 'en') setLang(saved);
+    try {
+      var saved = localStorage.getItem('chrismuse_privacy_lang');
+      if (saved === 'en') show('en');
+    } catch (e) {}
   })();
 </script>
 
